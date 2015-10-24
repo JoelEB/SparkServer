@@ -2,24 +2,28 @@
 Spark (Particle) Server Instructions
 
 [https://github.com/spark/spark-server/blob/master/README.md](https://github.com/spark/spark-server/blob/master/README.md)
+
 [https://github.com/spark/spark-server](https://github.com/spark/spark-server)
 
 ###Starting up Pi Server
-login as root or other user
-screen
-node-red (start node-red server) (port 2525(get data from Photon & 1880(web interface))
-ctl+a  c (new screen)
-cd /opt/spark-server/
-node main (start spark server)
+
+* login as root or other user
+* screen
+* node-red (start node-red server) (port 2525(get data from Photon & 1880(web interface))
+* ctl+a  c (new screen)
+* cd /opt/spark-server/
+* node main (start spark server)
 
 ###Setting up new PC to talk to the Pi Server
-particle config list
-particle config local apiUrl http://192.168.10.21:8080  (IP Address of Pi Server)
-particle config local
-particle login
-particle list
+
+* particle config list
+* particle config local apiUrl http://192.168.10.21:8080  (IP Address of Pi Server)
+* particle config local
+* particle login
+* particle list
 
 ###Adding new Photon to my network
+
 Setup Photon on local WiFi
 Plug Photon into Pi 
 Put in DFU Mode
