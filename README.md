@@ -17,7 +17,7 @@ Spark (Particle) Server Instructions
 ###Setting up new PC to talk to the Pi Server
 
 * particle config list
-* particle config local apiUrl http://192.168.10.21:8080  (IP Address of Pi Server)
+* particle config local apiUrl http://192.168.1.141:8080  (IP Address of Pi Server)
 * particle config local
 * particle login
 * particle list
@@ -28,7 +28,7 @@ Setup Photon on local WiFi
 Plug Photon into Pi 
 Put in DFU Mode
   cd /opt/spark-server
-  particle keys server default_key.pub.pem 192.168.1.10  (pi address)
+  particle keys server default_key.pub.pem 192.168.1.141  (pi address)
   particle keys save (photon ID)
   mv (photonID).pub.pem core_keys
 delete all other crap
@@ -56,10 +56,10 @@ ifup wlan0
 ifconfig
 
 ###Node Red Web interface
-http://192.168.10.21:1880/  (Pi IP + :1880)
+http://192.168.1.141:1880/  (Pi IP + :1880)
 
 ###Dashboard
-http://192.168.10.21:1880/dash  
+http://192.168.1.141:1880/dash  
 
 
 ###Updating Photon Device Firmware Over USB
