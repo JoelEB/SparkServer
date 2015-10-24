@@ -20,12 +20,13 @@ Spark (Particle) Server Instructions
 
 ###Setting up new PC to talk to the Pi Server
 
-* particle config list
-* particle config local apiUrl http://192.168.1.141:8080  (IP Address of Pi Server)
-* particle config local
-* particle login
-* particle list
-
+```
+particle config list
+particle config local apiUrl http://192.168.1.141:8080  (IP Address of Pi Server)
+particle config local
+particle login
+particle list
+```
 ###Adding new Photon to my network
 
 Setup Photon on local WiFi
