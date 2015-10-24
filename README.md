@@ -5,6 +5,10 @@ Spark (Particle) Server Instructions
 
 [https://github.com/spark/spark-server](https://github.com/spark/spark-server)
 
+[Community Instructions for Installing on RasPi2](https://community.particle.io/t/installing-particle-cli-spark-server-on-raspberry-pi-2/12996)
+
+[Community Local Cloud 1st Time Instructions](https://community.particle.io/t/tutorial-local-cloud-1st-time-instructions-01-oct-15/5589)
+
 ###Starting up Pi Server
 
 * login as root or other user
