@@ -27,10 +27,10 @@ Spark (Particle) Server Instructions
 Setup Photon on local WiFi
 Plug Photon into Pi 
 Put in DFU Mode
-cd /opt/spark-server
-particle keys server default_key.pub.pem 192.168.1.10  (pi address)
-particle keys save (photon ID)
-mv (photonID).pub.pem core_keys
+  cd /opt/spark-server
+  particle keys server default_key.pub.pem 192.168.1.10  (pi address)
+  particle keys save (photon ID)
+  mv (photonID).pub.pem core_keys
 delete all other crap
 reset photon
 put photon in listening mode (blinking blue)
