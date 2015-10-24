@@ -69,8 +69,8 @@ http://192.168.1.141:1880/dash
 
 
 ###Updating Photon Device Firmware Over USB
-download latest version from https://github.com/spark/firmware/releases
-move to directory where files where downloaded
+* download latest version from https://github.com/spark/firmware/releases
+* move to directory where files where downloaded
 
 Photon:
 ```
