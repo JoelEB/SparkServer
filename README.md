@@ -50,8 +50,8 @@ particle list
 
 
 ###Send code to Photon on my own network
-compile and download .bin file from Particle Build
-particle flash nameOfPhoton /your/location/firmware.bin
+* compile and download .bin file from Particle Build
+* particle flash nameOfPhoton /your/location/firmware.bin
 
 ###Setting up WiFi through CLI
 ```
