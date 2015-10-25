@@ -5,7 +5,7 @@ Spark (Particle) Server Instructions
 
 [https://github.com/spark/spark-server](https://github.com/spark/spark-server)
 
-[Community Instructions for Installing on RasPi2](https://community.particle.io/t/installing-particle-cli-spark-server-on-raspberry-pi-2/12996)
+
 
 [Community Local Cloud 1st Time Instructions](https://community.particle.io/t/tutorial-local-cloud-1st-time-instructions-01-oct-15/5589)
 
@@ -27,6 +27,13 @@ particle config local
 particle login
 particle list
 ```
+
+###Installing Particle CLI
+```
+sudo npm install -g particle-cli --unsafe-perm
+```
+[Community Instructions for Installing on RasPi2](https://community.particle.io/t/installing-particle-cli-spark-server-on-raspberry-pi-2/12996)
+
 ###Adding new Photon to my network
 ```
 Setup Photon on local WiFi
