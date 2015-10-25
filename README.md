@@ -1,6 +1,8 @@
 # SparkServer
 Spark (Particle) Server Instructions
 
+[Installing node.js on Raspberry Pi](https://learn.adafruit.com/node-embedded-development/)
+
 [https://github.com/spark/spark-server/blob/master/README.md](https://github.com/spark/spark-server/blob/master/README.md)
 
 [https://github.com/spark/spark-server](https://github.com/spark/spark-server)
