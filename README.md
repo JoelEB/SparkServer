@@ -38,22 +38,22 @@ sudo npm install -g particle-cli --unsafe-perm
 
 ###Adding new Photon to my network
 ```
-Setup Photon on local WiFi
 Plug Photon into Pi 
+Setup Photon on local WiFi
+particle setup wifi (flashing blue)
+particle identify 
+copy DEVICE_ID
 Put in DFU Mode
 cd /opt/spark-server
 particle keys server default_key.pub.pem 192.168.1.141  (pi address)
+cd /core_keys
 particle keys save (photon ID)
-mv (photonID).pub.pem core_keys
 delete all other crap
 reset photon
-put photon in listening mode (blinking blue)
-particle identify (to get ID)
-copy ID
-put back in DFU mode
-particle keys doctor your_ID
 particle device add your_ID
+particle device rename DEVICE_ID New_Name
 particle list
+
 ```
 
 
