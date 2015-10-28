@@ -70,6 +70,38 @@ ifdown wlan0
 ifup wlan0
 ifconfig
 ```
+###Starting Node Red and Spark Server Automatically
+
+First, we need to install Forever
+```npm install -g forever```
+
+We started by trying to get Crontab to run both node-red and the spark server. It worked for the node red server but it would not work for the spark server. To edit crontab, type:
+```crontab -u root -e```
+at the bottom of the file, type:
+```
+@reboot forever start /usr/local/lib/node_modules/node-red/red.js --settings /root/.node-red/settings.js
+#@reboot forever start /opt/spark-server/main.js
+```
+the bottom line is the one that failed to run correctly
+
+From there, we attmepted to use [Forever-Service](https://github.com/zapty/forever-service) to run both. 
+```
+npm install -g forever-service
+cd /opt/spark-server
+forever-service install sparkserver --script main.js
+cd /etc/init.d
+service sparkserver status
+service sparkserver start
+
+To see if it actually worked, do:
+cd /var/log/
+tail -f sparkserver.log
+```
+As it turned out, the spark-server would start this way, but the Node-red server would not. Thus, I used crontab to start the node-red server and forevr-service to keep the spark-server running even after reboot. 
+
+to kill the forever-service, type:
+``` ```
+
 ###Node Red Web interface
 http://192.168.1.141:1880/  (Pi IP + :1880)
 
