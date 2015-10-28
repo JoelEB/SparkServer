@@ -96,6 +96,8 @@ service sparkserver start
 To see if it actually worked, do:
 cd /var/log/
 tail -f sparkserver.log
+
+forever list
 ```
 As it turned out, the spark-server would start this way, but the Node-red server would not. Thus, I used crontab to start the node-red server and forevr-service to keep the spark-server running even after reboot. 
 
