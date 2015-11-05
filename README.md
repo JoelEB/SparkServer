@@ -102,7 +102,6 @@ forever list
 As it turned out, the spark-server would start this way, but the Node-red server would not. Thus, I used crontab to start the node-red server and forevr-service to keep the spark-server running even after reboot. 
 
 to kill the forever-service, type:
-``` ```
 
 ###Node Red Web interface
 http://192.168.1.141:1880/  (Pi IP + :1880)
