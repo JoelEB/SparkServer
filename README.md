@@ -1,5 +1,100 @@
-# SparkServer
-Spark (Particle) Server Instructions
+# How to Build a SBC Server
+
+This guide goes through all the steps necessary to get a SBC server up and running for Openponics Sensor Network deployment in the field. 
+
+##Install Fresh Image on SBC
+
+First, get a SBC (Raspberry Pi, Banana Pi, etc) up and running with a fresh image. Configure all settings such as
+
+* Time zone
+* Keyboard layout 
+* SSH Enable
+* Change Hostname
+* Change password
+
+**Note:** Raspi-config password change does not work on Banana Pi. Instead use:
+
+```sudo passwd bananapi```
+
+
+##Boot Banana Pi from SSD
+
+These instructions are a derived from these two sites:
+
+[http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html](http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html)
+[http://www.htpcguides.com/move-linux-banana-pi-sata-setup/](http://www.htpcguides.com/move-linux-banana-pi-sata-setup/)
+[http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html)
+
+Commands to list attached mass storage devices and file systems 
+
+```
+sudo fdisk -l
+sudo mount -l
+df -h
+```
+
+[Linux USB Drive Command Cheat Sheet](https://www.raspberrypi.org/forums/viewtopic.php?t=38429)
+
+
+##Install Node.js
+Download a compatable version of node.js. **The latest version is not compatible with the current version of the particle sever.**
+
+####All versions of node [can be found here](https://nodejs.org/dist/).
+
+For our setup, we need a version in the 0.10.X range. v0.10.40 has been proven. 
+
+[http://nodejs.org/dist/v0.10.40/node-v0.10.40.tar.gz](http://nodejs.org/dist/v0.10.40/node-v0.10.40.tar.gz)
+
+Can be downloaded on PC and then transfered over with Cyberduck or other SFTP service. 
+
+**DO NOT EXTRACT BEFORE TRANSFERRING**
+ 
+Once SFTPed over, extract with 
+
+```tar -xvf node-v0.10.40.tar.gz```
+
+Change permissions on newly extracted folder
+
+```sudo chown bananapi:pi node-v0.10.40/ -R``` 
+
+Delete .tar and cd into node folder
+
+```
+cd node-v0.10.40
+./configure --without-snapshot
+make -j2
+sudo make install
+npm cache clean
+sudo npm cache clean
+```
+
+###Install Node-Red
+
+```sudo npm install -g node-red --unsafe-perm```
+
+###Installing Particle CLI
+```
+sudo npm install -g particle-cli --unsafe-perm
+```
+May need to do this double install if it doesn't work the first time. 
+
+```
+sudo npm install -g serialport@1.5.0 --unsafe-perm
+sudo npm install -g serialport@1.5.0 particle-cli --unsafe-perm
+```
+[Community Instructions for Installing on RasPi2](https://community.particle.io/t/installing-particle-cli-spark-server-on-raspberry-pi-2/12996)
+
+
+
+
+###Installing Particle Server
+
+```
+git clone https://github.com/spark/spark-server.git
+cd spark-server
+npm install
+node main.js
+```
 
 [Installing node.js on Raspberry Pi](https://learn.adafruit.com/node-embedded-development/)
 
@@ -30,11 +125,7 @@ particle login
 particle list
 ```
 
-###Installing Particle CLI
-```
-sudo npm install -g particle-cli --unsafe-perm
-```
-[Community Instructions for Installing on RasPi2](https://community.particle.io/t/installing-particle-cli-spark-server-on-raspberry-pi-2/12996)
+
 
 ###Adding new Photon to my network
 ```
@@ -78,6 +169,7 @@ First, we need to install Forever
 We started by trying to get Crontab to run both node-red and the spark server. It worked for the node red server but it would not work for the spark server. To edit crontab, type:
 ```crontab -u root -e```
 at the bottom of the file, type:
+
 ```
 @reboot forever start /usr/local/lib/node_modules/node-red/red.js --settings /root/.node-red/settings.js
 #@reboot forever start /opt/spark-server/main.js
@@ -85,6 +177,7 @@ at the bottom of the file, type:
 the bottom line is the one that failed to run correctly
 
 From there, we attmepted to use [Forever-Service](https://github.com/zapty/forever-service) to run both. 
+
 ```
 npm install -g forever-service
 cd /opt/spark-server
@@ -99,6 +192,7 @@ tail -f sparkserver.log
 
 forever list
 ```
+
 As it turned out, the spark-server would start this way, but the Node-red server would not. Thus, I used crontab to start the node-red server and forevr-service to keep the spark-server running even after reboot. 
 
 to kill the forever-service, type:
