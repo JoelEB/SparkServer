@@ -241,4 +241,35 @@ dfu-util -d 2b04:d008 -a 0 -s 0x8020000 -D system-part1-0.4.7-p1.bin
 dfu-util -d 2b04:d008 -a 0 -s 0x8060000:leave -D system-part2-0.4.7-p1.bin
 ```
 
+---
 
+####Email notes from Chrobi about installing olderversion of Node - moved here from email. 
+On this  one I would just pull the source and compile from there:
+
+https://nodejs.org/dist/  - this is the main location for all the downloads...
+
+I would use this one if it was me:
+https://nodejs.org/dist/v0.10.40/node-v0.10.40.tar.gz
+
+Then I would extract it with 
+
+tar -xvf node-v0.10.40.tar.gz
+
+Then I would do:
+
+cd node-v0.10.40
+./configure
+make -j 2
+sudo make install
+
+Then from there:
+sudo npm install -g node-red particle-cli
+
+At this point you should have node-red and particle-cli.
+
+From here you will need to go to the node-red directory in the user directory.  After you run node-red once.
+
+cd ~/.node-red
+npm install node-red-contrib-particle
+
+That will give you the particle nodes in node-red..
