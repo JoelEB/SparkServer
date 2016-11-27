@@ -148,6 +148,7 @@ particle list
 ```
 
 ###Adding Photon back to Particle Cloud
+Original info [here](https://docs.particle.io/support/troubleshooting/cloud-solutions/core/). 
 
 * Plug Photon into computer 
 * Download [this file](https://s3.amazonaws.com/spark-website/cloud_public.der) - may need to rename from .cer to .der
