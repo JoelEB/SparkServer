@@ -127,7 +127,7 @@ particle list
 
 
 
-###Adding new Photon to my network
+###Adding new Photon to my network (Cloud Switching (Local vs Particle))
 ```
 Plug Photon into Pi 
 Setup Photon on local WiFi
@@ -146,6 +146,27 @@ particle device rename DEVICE_ID New_Name
 particle list
 
 ```
+
+###Adding new Photon to my network (Cloud Switching (Local vs Particle))
+
+* Plug Photon into computer 
+* Download [this file](https://s3.amazonaws.com/spark-website/cloud_public.der) - may need to rename from .cer to .der
+* `cd` to the directory that file lives in
+* Place your Core in DFU-mode (flashing yellow)
+* On the command line (to switch to Particle Cloud):
+```
+particle keys server cloud_public.der
+```
+* Manually reset Photon 
+* Switch clouds: 
+```
+particle config list
+particle config identify
+particle config particle
+particle login
+particle list
+```
+* Should see newly added Photon in list 
 
 
 
