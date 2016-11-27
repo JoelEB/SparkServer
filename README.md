@@ -127,7 +127,7 @@ particle list
 
 
 
-###Adding new Photon to my network (Cloud Switching (Local vs Particle))
+###Adding new Photon to my network (local cloud) 
 ```
 Plug Photon into Pi 
 Setup Photon on local WiFi
@@ -147,7 +147,7 @@ particle list
 
 ```
 
-###Adding new Photon to my network (Cloud Switching (Local vs Particle))
+###Adding Photon back to Particle Cloud
 
 * Plug Photon into computer 
 * Download [this file](https://s3.amazonaws.com/spark-website/cloud_public.der) - may need to rename from .cer to .der
