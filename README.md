@@ -21,11 +21,11 @@ First, get a SBC (Raspberry Pi, Banana Pi, etc) up and running with a fresh imag
 
 ## Boot Banana Pi from SSD
 
-These instructions are a derived from these two sites:
+These instructions are a derived from these sites:
 
-[http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html](http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html)
-[http://www.htpcguides.com/move-linux-banana-pi-sata-setup/](http://www.htpcguides.com/move-linux-banana-pi-sata-setup/)
-[http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html)
+* [http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html](http://banoffeepiserver.com/setup-raspbian-on-a-sata-hard-disk.html)
+* [http://www.htpcguides.com/move-linux-banana-pi-sata-setup/](http://www.htpcguides.com/move-linux-banana-pi-sata-setup/)
+* [http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html](http://www.yolinux.com/TUTORIALS/LinuxTutorialAdditionalHardDrive.html)
 
 Commands to list attached mass storage devices and file systems 
 
