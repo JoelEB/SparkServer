@@ -19,7 +19,7 @@ First, get a SBC (Raspberry Pi, Banana Pi, etc) up and running with a fresh imag
 ```sudo passwd bananapi```
 
 
-##Boot Banana Pi from SSD
+## Boot Banana Pi from SSD
 
 These instructions are a derived from these two sites:
 
@@ -38,10 +38,10 @@ df -h
 [Linux USB Drive Command Cheat Sheet](https://www.raspberrypi.org/forums/viewtopic.php?t=38429)
 
 
-##Install Node.js
+## Install Node.js
 Download a compatable version of node.js. **The latest version is not compatible with the current version of the particle sever.**
 
-####All versions of node [can be found here](https://nodejs.org/dist/).
+#### All versions of node [can be found here](https://nodejs.org/dist/).
 
 For our setup, we need a version in the 0.10.X range. v0.10.40 has been proven. 
 
@@ -70,11 +70,11 @@ npm cache clean
 sudo npm cache clean
 ```
 
-###Install Node-Red
+### Install Node-Red
 
 ```sudo npm install -g node-red --unsafe-perm```
 
-###Installing Particle CLI
+### Installing Particle CLI
 ```
 sudo npm install -g particle-cli --unsafe-perm
 ```
@@ -89,7 +89,7 @@ sudo npm install -g serialport@1.5.0 particle-cli --unsafe-perm
 
 
 
-###Installing Particle Server
+### Installing Particle Server
 
 ```
 git clone https://github.com/spark/spark-server.git
@@ -108,7 +108,7 @@ node main.js
 
 [Community Local Cloud 1st Time Instructions](https://community.particle.io/t/tutorial-local-cloud-1st-time-instructions-01-oct-15/5589)
 
-###Starting up Pi Server
+### Starting up Pi Server
 ```
 login as root or other user
 screen
@@ -117,7 +117,7 @@ ctl+a  c (new screen)
 cd /opt/spark-server/
 node main (start spark server)
 ```
-###Setting up new PC to talk to the Pi Server
+### Setting up new PC to talk to the Pi Server
 
 ```
 particle config list
@@ -129,7 +129,7 @@ particle list
 
 
 
-###Adding new Photon to my network (local cloud) 
+### Adding new Photon to my network (local cloud) 
 ```
 Plug Photon into Pi 
 Setup Photon on local WiFi
@@ -149,7 +149,7 @@ particle list
 
 ```
 
-###Adding Photon back to Particle Cloud
+### Adding Photon back to Particle Cloud
 Original info [here](https://docs.particle.io/support/troubleshooting/cloud-solutions/core/). 
 
 * Plug Photon into computer 
@@ -173,11 +173,11 @@ particle list
 
 
 
-###Send code to Photon on my own network
+### Send code to Photon on my own network
 * compile and download .bin file from Particle Build
 * particle flash nameOfPhoton /your/location/firmware.bin
 
-###Setting up WiFi through CLI
+### Setting up WiFi through CLI
 ```
 sudo iwlist wlan0 scan |less
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
@@ -185,7 +185,7 @@ ifdown wlan0
 ifup wlan0
 ifconfig
 ```
-###Starting Node Red and Spark Server Automatically
+### Starting Node Red and Spark Server Automatically
 
 First, we need to install Forever
 ```npm install -g forever```
@@ -221,14 +221,14 @@ As it turned out, the spark-server would start this way, but the Node-red server
 
 to kill the forever-service, type:
 
-###Node Red Web interface
+### Node Red Web interface
 http://192.168.1.141:1880/  (Pi IP + :1880)
 
-###Dashboard
+### Dashboard
 http://192.168.1.141:1880/dash  
 
 
-###Updating Photon Device Firmware Over USB
+### Updating Photon Device Firmware Over USB
 * download latest version from https://github.com/spark/firmware/releases
 * move to directory where files where downloaded
 
@@ -245,7 +245,7 @@ dfu-util -d 2b04:d008 -a 0 -s 0x8060000:leave -D system-part2-0.4.7-p1.bin
 
 ---
 
-####Email notes from Chrobi about installing olderversion of Node - moved here from email. 
+#### Email notes from Chrobi about installing olderversion of Node - moved here from email. 
 On this  one I would just pull the source and compile from there:
 
 https://nodejs.org/dist/  - this is the main location for all the downloads...
