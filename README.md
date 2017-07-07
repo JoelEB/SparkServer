@@ -1,8 +1,10 @@
-# How to Build a SBC Server
+How to Build a SBC Server
+==========
 
 This guide goes through all the steps necessary to get a SBC server up and running for Openponics Sensor Network deployment in the field. 
 
-##Install Fresh Image on SBC
+Install Fresh Image on SBC
+----
 
 First, get a SBC (Raspberry Pi, Banana Pi, etc) up and running with a fresh image. Configure all settings such as
 
