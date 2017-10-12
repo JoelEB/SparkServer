@@ -97,9 +97,41 @@ hostapd /etc/hostapd/hostapd.conf
 
 Change IP Address here as well if changed earlier. 
 
-```chmod 775 /usr/local/bin/hostapdstart```
+```sudo chmod 775 /usr/local/bin/hostapdstart```
 
 #### DNS Setup
 
+```sudo nano /etc/dnsmasq.conf```
+
+```
+interface=lo,uap0
+no-dhcp-interface=lo,wlan0
+bind-interfaces
+server=8.8.8.8
+domain-needed
+bogus-priv
+dhcp-range=192.168.50.50,192.168.50.150,12h
+```
+
+Again, change IP address
+
+```sudo service dnsmasq start```
+
+#### Startup
+
+```sudo nano /etc/rc.local```
+
+```
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+  printf "My IP address is %s\n" "$_IP"
+fi
+/bin/bash /usr/local/bin/hostapdstart
+exit 0
+```
+
+(I think this is the right spot)
+
+```sudo reboot```
 
 
